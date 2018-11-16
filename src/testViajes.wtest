@@ -1,0 +1,52 @@
+import Viajes.*
+import Socios.*
+
+describe "test de Viajes"{
+	
+	var viaje = new Viaje(tipoDeViaje = "playa" ,idiomas = ["espanol","italiano"],implicaEsfuerzo = true, sirveParaBroncearse = true , dias = 10)
+	var viaje2 = new Viaje(tipoDeViaje = "playa" ,idiomas = ["espanol","italiano","frances"],implicaEsfuerzo = true, sirveParaBroncearse = true , dias = 10)
+    var playa = new Playa(largo = 1500, tipoDeViaje = "playa", implicaEsfuerzo = true, sirveParaBroncearse = true, dias = 10)
+    var excursionCiudad = new ExcursionCiudad(cantDeAtracciones = 3, tipoDeViaje = "excursionCiudad", implicaEsfuerzo = true, sirveParaBroncearse = false, dias = 10)
+   
+  
+method crearViaje(){
+	    
+	    viaje.tipoDeViaje(playa)
+		viaje.idiomas()
+		viaje.cantDeIdiomas()
+		viaje.implicaEsfuerzo(true)
+		viaje.sirveParaBroncearse(false)
+		viaje.cantDiasDeActividad()
+		
+		viaje2.tipoDeViaje(excursionCiudad)
+		viaje2.idiomas("espanol")
+		viaje2.cantDeIdiomas()
+		viaje2.implicaEsfuerzo(true)
+		viaje2.sirveParaBroncearse(false)
+		viaje2.cantDiasDeActividad()
+}
+
+
+test "La cantDeIdiomas que tiene el viaje playa son 2 "{
+	 self.crearViaje()
+	 assert.that(viaje.cantDeIdiomas())
+}
+
+test "La Actividad playa lleva 3 dias"{
+    
+    self.crearViaje()
+    assert.equals(3,viaje.cantDiasDeActividad())
+    	
+ }	
+ 
+test "La actividad playa implica esfuerzo  "{
+	
+	self.crearViaje()
+    assert.that(viaje.implicaEsfuerzo())
+}
+test "La actividad playa sirve para broncearse "{
+   self.crearViaje()
+   assert.that(viaje.sirveParaBroncearse())
+}
+
+}
