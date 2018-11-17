@@ -36,13 +36,13 @@ class Socio {
 	
   }
   
-object tranquilo inherits Socio{
+object tranquilo {
 	
     method condicion()= mutual.actividades().dia() >= 4 
 	
 }
 
-object coherente inherits Socio{
+object coherente {
 	
 	method condicion() {
 		if (self.adoradorDelSol()){
@@ -53,7 +53,7 @@ object coherente inherits Socio{
 	}
 }
 
-object celajado inherits Socio{
+object celajado {
 	
 	method condicion(){
 		return mutual.actividades().idioma()
