@@ -9,21 +9,22 @@ describe "test de Viajes"{
     var excursionCiudad = new ExcursionCiudad(cantDeAtracciones = 3, tipoDeViaje = "excursionCiudad", implicaEsfuerzo = true, sirveParaBroncearse = false, dias = 10)
    
   
-method crearViaje(){
+method crearViaje(){ //si en todos los tests se usa este metodo, definir un fixture
 	    
 	    viaje.tipoDeViaje(playa)
-		viaje.idiomas()
+		viaje.idiomas() //falta parametro
 		viaje.cantDeIdiomas()
-		viaje.implicaEsfuerzo(true)
+		viaje.implicaEsfuerzo(true) // ya esta inicializada la variable
 		viaje.sirveParaBroncearse(false)
 		viaje.cantDiasDeActividad()
 		
-		viaje2.tipoDeViaje(excursionCiudad)
+		viaje2.tipoDeViaje(excursionCiudad) // viaje2 tenia como tipo de viaje "playa", luego aca se setea excursionCiudad, que a su vez tiene seteado su tipo de viaje como "excurcionCiudad"!!
 		viaje2.idiomas("espanol")
 		viaje2.cantDeIdiomas()
 		viaje2.implicaEsfuerzo(true)
 		viaje2.sirveParaBroncearse(false)
 		viaje2.cantDiasDeActividad()
+		//hay mensajes que no tienen efecto
 }
 
 
